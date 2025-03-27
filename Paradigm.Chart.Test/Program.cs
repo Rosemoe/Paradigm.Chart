@@ -13,11 +13,11 @@ var extractorSongsDir = "./songs";
 
 var dirs = Directory.GetDirectories(extractorSongsDir);
 var result = new Dictionary<string, Dictionary<string, int>> ();
-for (int i = 0; i < dirs.Length; i++)
+foreach (var dir in dirs)
 {
-    var songId = Path.GetFileName(dirs[i]);
+    var songId = Path.GetFileName(dir);
     result.Add(songId, new Dictionary<string, int>());
-    var charts = Directory.GetFiles(dirs[i], $"*.txt", SearchOption.TopDirectoryOnly);
+    var charts = Directory.GetFiles(dir, $"*.txt", SearchOption.TopDirectoryOnly);
     foreach (var chartPath in charts)
     {
         var difficulty = Path.GetFileNameWithoutExtension(chartPath)!;
