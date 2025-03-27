@@ -7,6 +7,8 @@ public static class Specs
 
     public const float OutOfSideRangeTolerance = 0.02f;
     
+    public const int PPQ = 5040;
+    
     /// <summary>
     /// Edge note side size.
     /// </summary>
@@ -23,4 +25,5 @@ public static class Specs
         // Right = 1
         return 9;
     }
+
 }

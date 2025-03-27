@@ -17,7 +17,7 @@ public class CreateBeatShift : ChartCommandBase<(double start, double bpm, int b
         {
             throw new ChartParserException("trying to create a BeatShift before last BeatShift");
         }
-        parser.Chart.TimingManager.AddBeatShift(new BeatShift(objectPulse, args.bpm, BeatShift.PPQ * args.bpb, parser.BeatShiftIndex++));
+        parser.Chart.TimingManager.AddBeatShift(new BeatShift(objectPulse, args.bpm, Specs.PPQ * args.bpb, parser.BeatShiftIndex++));
     }
     
 }

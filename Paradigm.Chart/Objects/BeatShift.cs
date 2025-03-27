@@ -2,9 +2,6 @@
 
 public class BeatShift(int changePulse, double bpm, int pulsePerBeat, int beatShiftIndex, int hideBars = 0) : ChartObject, IComparable<BeatShift>
 {
-
-    public const int PPQ = 5040;
-    
     public int ChangePulse { get; set; } = changePulse;
 
     public double Bpm { get; set; } = bpm;

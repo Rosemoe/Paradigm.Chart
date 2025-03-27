@@ -23,7 +23,7 @@ public class SnakeGroup : ChartObject
     {
         var result = new List<double>();
         var manager = chart.TimingManager;
-        double offsetTime = manager.PulseToTime(p1.Pulse + BeatShift.PPQ / 2);
+        double offsetTime = manager.PulseToTime(p1.Pulse + Specs.PPQ / 2);
         double noteTime = manager.PulseToTime(p1.Pulse);
         float intervalTime = (float)(offsetTime - noteTime);
         float limitTime = manager.PulseToTimeFloat(p2.Pulse);

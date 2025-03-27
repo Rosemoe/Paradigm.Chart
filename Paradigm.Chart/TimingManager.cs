@@ -16,26 +16,10 @@ public class TimingManager
     {
         var previous = _beatShifts.Keys.LastOrDefault(EmptyShift);
         var previousTime = _beatShifts.Count == 0 ? 0.0 : _beatShifts.Last().Value;
-        var deltaTime = (beatShift.ChangePulse - previous.ChangePulse) / previous.Bpm / (BeatShift.PPQ / 60.0);
+        var deltaTime = (beatShift.ChangePulse - previous.ChangePulse) / previous.Bpm / (Specs.PPQ / 60.0);
         var time = previousTime + deltaTime;
         _beatShifts.Add(beatShift, time);
     }
-
-    // public void RefillBeatShiftValues()
-    // {
-    //     if (_beatShifts.Count < 1)
-    //     {
-    //         return;
-    //     }
-    //     var previous = new BeatShift(0, 120.0, 0, 0);
-    //     for (int i = 0; i < _beatShifts.Count; i++)
-    //     {
-    //         var key = _beatShifts.Keys[i];
-    //         var time = (key.ChangePulse - previous.ChangePulse) * previous.Bpm * 60.0 / BeatShift.PPQ;
-    //         _beatShifts[key] = time;
-    //         previous = key;
-    //     }
-    // }
     
     public int CurrentMaxPulse => _beatShifts.Count == 0 ? 0 : _beatShifts.Last().Key.ChangePulse;
     
